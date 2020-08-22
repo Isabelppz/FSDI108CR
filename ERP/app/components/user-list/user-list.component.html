@@ -1,0 +1,44 @@
+<h2>List of users in the System</h2>
+There are: {{ allUsers.length }}
+
+<!-- <ul> 
+    <li *ngFor="let x of allUsers">a user</li>
+</ul> -->
+
+<!-- <ul> 
+    <li *ngFor= "let user of allUsers">{{user.Name}}</li>
+</ul> -->
+
+<!-- <h6 *ngFor= "let user of allUsers">{{user.Name}}</h6> -->
+
+<!-- <div *ngFor="let user of allUsers">
+    <img src="https://vectorified.com/images/girl-icon-1.png">
+    <h6>{{user.Name}}</h6>
+    <hr>
+    <label>Gender: {{user.gender}}</label>
+    <label>Email: {{user.email}}</label>
+    <label>Phone Number: {{user.phoneNumber}}</label>
+</div> -->
+
+<div *ngIf="allUsers.length < 1" class="alert alert-danger">
+    <h6>Please create users on the register page </h6>
+</div>
+
+<table *ngIf="allUsers.length > 0 " class="table table-bordered table-stripped">
+    <thead class="thead-dark">
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Phone Number</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of allUsers">
+            <td>{{user.userName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.Name}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.phoneNumber}}</td>
+        </tr>3
+    </tbody>
+</table>
