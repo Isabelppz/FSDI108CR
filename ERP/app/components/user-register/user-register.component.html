@@ -1,0 +1,89 @@
+<!-- 
+    
+    email
+    userName
+    password
+
+    Name
+    Gender
+    Phone number
+
+-->
+<div class="row">
+    <div class="col-md-6 offset-2">
+        <h2>Register New User</h2>
+<form>
+    <div class="form-group row">
+        <label for="" class="col-4 col-form-label">Email</label>
+        <div class="col-8">
+        <div class="input-group">
+        <input [(ngModel)]="model.email" name="email" type="text" class="form-control">
+      </div>
+    </div>
+</div>
+      <div class="form-group row">
+        <label for="" class="col-4 col-form-label">Username</label>
+        <div class="col-8">
+          <div class="input-group">
+          <input [(ngModel)]="model.userName" name="userName" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+    <div class="form-group row">
+        <label for="" class="col-4 col-form-label">Password</label>
+        <div class="col-8">
+        <div class="input-group">
+        <input [(ngModel)]="model.password" name="password" 
+        type="password" class="form-control">
+        </div>
+      </div>
+    </div>
+      <div class="form-group row">
+        <label for="" class="col-4 col-form-label">Retype Password</label>
+        <div class="col-8">
+            <div class="input-group">
+        <input [(ngModel)]="retypePass" name="retypePass" 
+        type="password" class="form-control">
+        <div *ngIf="model.password && retypePass && model.password != retypePass" 
+        class="alert alert-danger">
+          Passwords do not match.
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-4 col-form-label">Name</label>
+        <div class="col-8">
+        <input [(ngModel)]="model.Name" name="Name" type="text" class="form-control">
+      </div>
+    </div>
+      <div class="form-group row">
+        <label class="col-4 col-form-label">Gender</label>
+        <div class="col-8">
+        <select [(ngModel)]="model.gender" name="gender" class="custom-select">
+          <option selected disabled value="">Choose...</option>
+          <option value="1">Male</option>
+          <option value="2">Female</option>
+        </select>
+      </div>
+    </div>
+      <div class="form-group row">
+        <label for="text" class="col-4 col-form-label">Phone Number</label>
+        <div class="col-8">
+        <input [(ngModel)]="model.phoneNumber" name="number" type="tel" class="form-control">
+    </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-4 col-8">
+    <button [disabled]="!isDataCorrect()" (click)="save()" name="submit" type="button"class="btn btn-info">Register User</button>
+    
+    <div *ngIf="alertVisible" class="alert alert-success">
+      User Saved!
+    </div>
+  
+  </div>
+  </div>
+</form>
+  </div>
+  </div>
+  <button disabled="true"></button>
