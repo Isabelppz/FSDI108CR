@@ -1,0 +1,14 @@
+<!-- <p>login works!</p> -->
+<div class="row">
+    <div class="login-form col-md-4 offset-md-4">
+        <h5>Log into ERP System</h5>
+        <input [(ngModel)]="userName" class="form-control" type="text" placeholder="User Name">
+        <input [(ngModel)]="password" class="form-control" type="password" placeholder="Password">
+        
+        <div *ngIf="loginError" class="alert alert-danger">
+            Wrong credential, please retry.
+        </div>
+
+        <button (click)="login()" class="btn btn-info">Sign in</button>
+    </div>
+</div>
